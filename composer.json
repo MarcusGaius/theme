@@ -1,0 +1,64 @@
+{
+    "name": "marcusgaius/theme",
+    "description": "WordPress theme for headless frontend.",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MarcusGaius",
+            "email": "metalmorgoth@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.3|^8.0",
+        "composer/installers": "^1.10",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "nesbot/carbon": "^2.45.1",
+        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "hassankhan/config": "^2.2.0",
+        "haydenpierce/class-finder": "^0.4.3",
+        "wpackagist-plugin/contact-form-7":"^5.4.1",
+        "wpackagist-plugin/contact-form-7-skins":"^2.4.2",
+        "wpackagist-plugin/jwt-authentication-for-wp-rest-api": "^1.2.6",
+        "wpackagist-plugin/user-role-editor":"^4.59.1",
+        "wpackagist-plugin/woocommerce": "^5.0",
+        "wpackagist-plugin/wp-rest-cache": "^2021.2"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "phpunit/phpunit": "^9.3.3",
+        "maximebf/debugbar": "1.16.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarcusGaius\\WordPressHeadless\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.9.5",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%PLUGIN_ACF_KEY}&t={%VERSION}"
+                },
+                "require": {
+                    "composer/installers": "^1.4",
+                    "ffraenz/private-composer-installer": "^5.0"
+                }
+            }
+        }
+    ]
+}

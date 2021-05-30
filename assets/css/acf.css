@@ -1,0 +1,26 @@
+#post-body-content #acf_after_title-sortables {
+	margin-top: 0;
+}
+
+#poststuff .acf-fields {
+	display: flex !important;
+	flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.acf-field {
+	flex: 1;
+}
+
+#poststuff .acf-fields .acf-field:first-child {
+	padding-top: 0;
+}
+
+#acf-post-id {
+	max-width: 100px;
+}
+
+.acf-field.mg-full-width {
+	min-width: 100%;
+}

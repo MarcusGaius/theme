@@ -1,0 +1,389 @@
+{
+    "key": "group_609dbef1d5993",
+    "title": "Donation",
+    "fields": [
+        {
+            "key": "field_609e811566150",
+            "label": "Donator",
+            "name": "donator",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_609dc36685eb6",
+                    "label": "Donator",
+                    "name": "donator",
+                    "type": "text",
+                    "instructions": "<strong>Obavezno<\/strong> proveriti da li postoji dozvola donatora da se ime prikaže. U slučaju da ne postoji dozvola, biće prikazana vrsta donacije. Ovo polje će uvek biti prikazivano ako nije prazno.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_609e8000b72e2",
+                    "label": "Validacija Donatora",
+                    "name": "validacija_donatora",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609dc36685eb6",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "message": "Da li si siguran?",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                }
+            ]
+        },
+        {
+            "key": "field_609e81cf62f8f",
+            "label": "Donacija",
+            "name": "donacija",
+            "type": "group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_609dc2b82d4b6",
+                    "label": "Vrsta donacije",
+                    "name": "vrsta_donacije",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "choices": {
+                        "tekuci": "Uplata na tekući račun",
+                        "paypal": "Uplata na Paypal",
+                        "posta": "Poslato poštom",
+                        "licno": "Doneto lično"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "array",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_609dbef79d36e",
+                    "label": "Svrha donacije?",
+                    "name": "svrha_donacije",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "post_type": [
+                        "activity"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_609dc228bb829",
+                    "label": "Datum",
+                    "name": "datum",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "display_format": "d-m-Y",
+                    "return_format": "d-m-Y",
+                    "first_day": 1
+                }
+            ]
+        },
+        {
+            "key": "field_609e822162f90",
+            "label": "Sadržaj donacije",
+            "name": "sadrzaj_donacije",
+            "type": "group",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_609dbf749d36f",
+                    "label": "Tip pomoći",
+                    "name": "tip_pomoci",
+                    "type": "select",
+                    "instructions": "Ovde mogu doći neke dodatne instrukcije za editore, po potrebi. Nije nužno, može biti prazno.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "choices": {
+                        "novac": "Novčana",
+                        "odeća": "Odeća",
+                        "namirnice": "Namirnice",
+                        "ostalo": "Ostalo"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "array",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_609dbfbe9d370",
+                    "label": "Novac",
+                    "name": "novac",
+                    "type": "group",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609dbf749d36f",
+                                "operator": "==",
+                                "value": "novac"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "layout": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_609dc0cc9d372",
+                            "label": "Suma",
+                            "name": "suma",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "readonly": 0,
+                            "disabled": 0,
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "min": 10,
+                            "max": "",
+                            "step": 1
+                        },
+                        {
+                            "key": "field_609dc1079d373",
+                            "label": "Valuta",
+                            "name": "valuta",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "readonly": 0,
+                            "disabled": 0,
+                            "choices": {
+                                "rsd": "Dinar (RSD)",
+                                "eur": "Evro (EUR)"
+                            },
+                            "default_value": "rsd",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "array",
+                            "ajax": 0,
+                            "placeholder": ""
+                        }
+                    ]
+                },
+                {
+                    "key": "field_609dc1b49d374",
+                    "label": "Spisak odeće",
+                    "name": "spisak_odece",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609dbf749d36f",
+                                "operator": "==",
+                                "value": "odeća"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 1
+                },
+                {
+                    "key": "field_609dc0809d371",
+                    "label": "Spisak namirnica",
+                    "name": "spisak_namirnica",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609dbf749d36f",
+                                "operator": "==",
+                                "value": "namirnice"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 1
+                },
+                {
+                    "key": "field_609e827462f91",
+                    "label": "Ostalo",
+                    "name": "ostalo",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_609dbf749d36f",
+                                "operator": "==",
+                                "value": "ostalo"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "75",
+                        "class": "",
+                        "id": ""
+                    },
+                    "readonly": 0,
+                    "disabled": 0,
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "donation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621000892
+}
